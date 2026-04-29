@@ -1,5 +1,5 @@
 {
-  "apiKey": "sk-8bee65d66cb9411892abbaa32ce8a74f",
+  "apiKey": "只恨财力不足",
   "baseUrl": "https://api.deepseek.com/v1",
   "model": "deepseek-chat",
   "maxTokens": 1000,
