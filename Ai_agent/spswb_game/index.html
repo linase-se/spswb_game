@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三炮十五兵</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1 class="game-title">三炮十五兵</h1>
+        
+        <div class="game-info">
+            <div class="turn-info">
+                <span id="current-turn">当前回合：炮方</span>
+            </div>
+            <div class="piece-count">
+                <span>炮：<span id="cannon-count">3</span></span>
+                <span>兵：<span id="soldier-count">15</span></span>
+            </div>
+            <div id="turn-timer" class="timer">回合时间：30s</div>
+            <div id="move-counter" class="move-counter">当前步数：0</div>
+        </div>
+        
+        <div class="game-stats" id="game-stats">
+            <span>胜：0</span>
+            <span>负：0</span>
+            <span>平：0</span>
+        </div>
+        
+        <div class="difficulty-selector">
+            <label for="difficulty">难度选择：</label>
+            <select id="difficulty">
+                <option value="easy">简单</option>
+                <option value="medium">中等</option>
+                <option value="hard">困难</option>
+            </select>
+        </div>
+        
+        <div class="board-container">
+            <div class="board" id="board">
+            </div>
+        </div>
+        
+        <div class="game-controls">
+            <button id="restart-btn" class="btn">重新开始</button>
+            <button id="undo-btn" class="btn">悔棋</button>
+            <button id="pause-btn" class="btn">暂停</button>
+            <button id="ai-toggle-btn" class="btn">切换双人对战</button>
+            <button id="switch-side-btn" class="btn">切换阵营</button>
+            <button id="reset-stats-btn" class="btn">重置战绩</button>
+        </div>
+        
+        <div class="game-status" id="game-status"></div>
+        <div class="player-side" id="player-side">你操控：炮方</div>
+        
+        <div class="rules">
+            <h3>游戏规则</h3>
+            <ul>
+                <li><strong>棋盘</strong>：5×5网格，共25个点位</li>
+                <li><strong>棋子</strong>：炮方3枚炮，兵方15枚兵</li>
+                <li><strong>开局</strong>：炮在第4行1、2、3列（底部），兵在第0、1、2行</li>
+                <li><strong>移动</strong>：所有棋子只能上下左右走相邻1格</li>
+                <li><strong>炮吃子</strong>：同一条直线，中间隔一个空格吃敌方兵</li>
+                <li><strong>兵</strong>：只能移动，不能吃子</li>
+                <li><strong>炮胜</strong>：吃掉大部分兵，兵方无法翻盘</li>
+                <li><strong>兵胜</strong>：围困所有炮，使其无法移动</li>
+            </ul>
+        </div>
+        
+        <div class="tutorial-modal" id="tutorial-modal">
+            <div class="modal-content">
+                <span class="close-btn" id="close-tutorial">&times;</span>
+                <h2>🎮 新手教程</h2>
+                <div class="tutorial-steps">
+                    <div class="step">
+                        <span class="step-number">1</span>
+                        <p>点击己方棋子选中，高亮显示可移动位置</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">2</span>
+                        <p>绿色格子表示可移动，红色格子表示可吃子</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">3</span>
+                        <p>炮吃子需要中间恰好隔1颗棋子</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">4</span>
+                        <p>围困所有炮或吃掉大部分兵即可获胜</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <button id="tutorial-btn" class="btn tutorial-btn">新手教程</button>
+    </div>
+    
+    <script src="game.js"></script>
+    <script src="ai.js"></script>
+    <script src="ai_agent.js"></script>
+    <script src="rag.js"></script>
+    <script src="app.js"></script>
+    <script src="deepseek.js"></script>
+</body>
+</html>

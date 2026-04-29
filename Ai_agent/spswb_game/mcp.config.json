@@ -1,0 +1,147 @@
+{
+  "$schema": "https://aka.ms/mcp/schema/1.1",
+  "id": "com.example.spswb-game",
+  "name": "三炮十五兵",
+  "version": "1.0.0",
+  "description": "一个经典的中国民间棋类游戏，三炮对战十五兵，集成智能AI代理",
+  "publisher": "Example Publisher",
+  "categories": ["游戏", "娱乐"],
+  "main": "app.js",
+  "permissions": [],
+  "capabilities": {
+    "commands": [
+      {
+        "name": "startGame",
+        "description": "开始新游戏",
+        "parameters": []
+      },
+      {
+        "name": "makeMove",
+        "description": "执行一步棋",
+        "parameters": [
+          {
+            "name": "from",
+            "type": "number",
+            "description": "起始位置索引 (0-24)"
+          },
+          {
+            "name": "to",
+            "type": "number",
+            "description": "目标位置索引 (0-24)"
+          }
+        ]
+      },
+      {
+        "name": "getBoard",
+        "description": "获取当前棋盘状态",
+        "parameters": []
+      },
+      {
+        "name": "getGameStatus",
+        "description": "获取游戏状态",
+        "parameters": []
+      },
+      {
+        "name": "undoMove",
+        "description": "悔棋",
+        "parameters": []
+      },
+      {
+        "name": "setDifficulty",
+        "description": "设置难度",
+        "parameters": [
+          {
+            "name": "level",
+            "type": "string",
+            "description": "难度级别: easy, medium, hard",
+            "enum": ["easy", "medium", "hard"]
+          }
+        ]
+      },
+      {
+        "name": "toggleAI",
+        "description": "切换人机/双人对战模式",
+        "parameters": []
+      },
+      {
+        "name": "getAIRecommendation",
+        "description": "获取AI推荐的最佳走法",
+        "parameters": []
+      },
+      {
+        "name": "getAIAnalysis",
+        "description": "获取AI对当前局势的分析",
+        "parameters": []
+      },
+      {
+        "name": "setAIDifficulty",
+        "description": "设置智能AI的难度级别",
+        "parameters": [
+          {
+            "name": "level",
+            "type": "string",
+            "description": "难度级别: easy, medium, hard",
+            "enum": ["easy", "medium", "hard"]
+          }
+        ]
+      },
+      {
+        "name": "getAIStatus",
+        "description": "获取智能AI的状态信息",
+        "parameters": []
+      },
+      {
+        "name": "forceAIMove",
+        "description": "强制AI执行一步棋",
+        "parameters": []
+      },
+      {
+        "name": "resetStats",
+        "description": "重置战绩",
+        "parameters": []
+      },
+      {
+        "name": "switchSide",
+        "description": "切换阵营",
+        "parameters": []
+      },
+      {
+        "name": "searchKnowledge",
+        "description": "搜索知识库",
+        "parameters": [
+          {
+            "name": "query",
+            "type": "string",
+            "description": "搜索关键词"
+          },
+          {
+            "name": "topK",
+            "type": "number",
+            "description": "返回结果数量（默认3）"
+          }
+        ]
+      },
+      {
+        "name": "getKnowledgeByCategory",
+        "description": "按分类获取知识",
+        "parameters": [
+          {
+            "name": "category",
+            "type": "string",
+            "description": "分类名称: rules, strategy, position, faq, tips"
+          }
+        ]
+      },
+      {
+        "name": "getAllKnowledge",
+        "description": "获取所有知识库内容",
+        "parameters": []
+      }
+    ],
+    "ui": {
+      "url": "index.html",
+      "width": 600,
+      "height": 800
+    }
+  }
+}

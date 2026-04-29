@@ -1,0 +1,7 @@
+{
+  "apiKey": "sk-8bee65d66cb9411892abbaa32ce8a74f",
+  "baseUrl": "https://api.deepseek.com/v1",
+  "model": "deepseek-chat",
+  "maxTokens": 1000,
+  "temperature": 0.7
+}
